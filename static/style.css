@@ -1,0 +1,13 @@
+body{
+    background-image: url("image.jpg");
+}
+#main
+{
+    width: 50%;
+    margin: auto;
+    border: 1px solid white;
+    background-color: aliceblue;
+    margin-top: 250px;
+    text-align: center;
+    padding: auto;
+}
