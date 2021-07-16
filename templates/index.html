@@ -5,29 +5,18 @@
         <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
     </head>
     <body>
-        <div id = "main" class >
-        <h1> Movie Recommendation System </h1>
-        <form action = "{{url_for('recommend')}}" method = "POST" class = "ui form"> 
-            <label>Enter the Movie name : </label>
-            <input
-             type = "text"
-             name = "Movie Name" 
-             placeholder = "Movie Name"  
-             required = "required"
-             /><br /><br/> 
-             <button type = "submit"> Recommend </button> 
-        </form>
-        {% if len == 0 %}
-        <h5>
-        The movie that recommended by you is not there in our data base 
-        </h5>
-        {% else %}
-        <ul class = "ui list">
-            {% for k in data %}
-            <li>{{ k }}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
+        <div id = "main" class = "ui segment">
+            <h1> Movie Recommendation System </h1>
+            <form action = "{{url_for('recommend')}}" method = "POST" class = "ui form">
+                <label>Enter the Movie name:</label>
+                <input type = "text" name = "movie" id = "movie_name" placeholder = "Movie Name"  required/>
+                <br> <br> <button type = "submit"> Recommend </button> </br> </br>
+            </form>
+            {% if len == 0 %}
+            <h3> The movie that recommended by you is not there in our data base </h3>
+            {% else %}
+            <h4> {{data}} </h4>
+            {% endif %}
         </div>
     </body>
 </html>
